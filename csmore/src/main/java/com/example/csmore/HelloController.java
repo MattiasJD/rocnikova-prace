@@ -3,12 +3,22 @@ package com.example.csmore;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.util.Timer;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class HelloController {
 
@@ -27,6 +37,9 @@ public class HelloController {
     public TextField pinField;
     public Label infoText;
     protected int password = 0000;
+    protected int logged;
+
+    ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
     @FXML
     public void buttonSevenClick() {
@@ -63,19 +76,30 @@ public class HelloController {
         pinField.setText(pinField.getText()+"6");
     }
 
-    public void acceptButtonClick(ActionEvent actionEvent) {
+    public void acceptButtonClick(ActionEvent actionEvent){
         int s = Integer.parseInt(pinField.getText());
-        if(s==password){
-            pinField.setText("cojeee kurva");
-        }else{
-            Timer timer = new Timer();
-            ///timer.schedule(dealyer(), second1000);
-            infoText.setStyle("-fx-text-fill: red;");
-            infoText.setText("ŠPATNÝ PIN");
-        }
+            if (s == password) {
+                logged = 1;
+                infoText.setStyle("-fx-text-fill: green;");
+                infoText.setText("Vítejte");
+                mainMenu();
+            } else {
+                infoText.setStyle("-fx-text-fill: red;");
+                infoText.setText("ŠPATNÝ PIN");
+            }
     }
-    public void dealyer(){
 
+
+    public void mainMenu(){
+        Stage stage89 = (Stage) pinField.getScene().getWindow();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-view.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            stage89.setScene(new Scene(root1));
+            stage89.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void buttonOneClick(ActionEvent actionEvent) {
