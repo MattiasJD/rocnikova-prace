@@ -15,7 +15,7 @@
                 <Image url="@background.png" />
             </image>
         </ImageView>
-        <Label fx:id="accNum" layoutX="148.0" layoutY="227.0" text="Číslo účtu" textFill="WHITE">
+        <Label fx:id="accNum" layoutX="120.0" layoutY="224.0" text="Číslo účtu" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="22.0" />
             </font>
@@ -32,7 +32,7 @@
         <Button fx:id="buttonTwo" layoutX="360.0" layoutY="849.0" mnemonicParsing="false" onAction="#buttonTwoClick" opacity="0.0" prefHeight="51.0" prefWidth="54.0" text="Button" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="481.0" AnchorPane.topAnchor="849.0" />
         <Button fx:id="buttonThree" layoutX="436.0" layoutY="849.0" mnemonicParsing="false" onAction="#buttonThreeClick" opacity="0.0" prefHeight="51.0" prefWidth="54.0" text="Button" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="436.0" AnchorPane.rightAnchor="405.0" AnchorPane.topAnchor="849.0" />
         <Button fx:id="buttonNull" layoutX="512.0" layoutY="849.0" mnemonicParsing="false" onAction="#buttonNullClick" opacity="0.0" prefHeight="51.0" prefWidth="54.0" text="Button" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="512.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="849.0" />
-      <Label fx:id="ibanNum" layoutX="148.0" layoutY="277.0" text="IBAN" textFill="WHITE">
+      <Label fx:id="ibanNum" layoutX="559.0" layoutY="227.0" text="/" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -47,8 +47,8 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="accNumField" layoutX="301.0" layoutY="227.0" onMouseClicked="#firstClick" prefHeight="26.0" prefWidth="312.0" />
-      <TextField fx:id="ibanField" layoutX="301.0" layoutY="281.0" onMouseClicked="#secondClick" prefHeight="26.0" prefWidth="312.0" />
+      <TextField fx:id="accNumField" layoutX="234.0" layoutY="227.0" onMouseClicked="#firstClick" prefHeight="26.0" prefWidth="312.0" />
+      <TextField fx:id="ibanField" layoutX="583.0" layoutY="230.0" onMouseClicked="#secondClick" prefHeight="26.0" prefWidth="148.0" />
       <TextField fx:id="amountField" layoutX="301.0" layoutY="331.0" onMouseClicked="#thirdClick" prefHeight="26.0" prefWidth="312.0" />
       <Button layoutX="81.0" layoutY="681.0" mnemonicParsing="false" onAction="#backButton" text="Zpět" />
       <Label fx:id="warningField" layoutX="262.0" layoutY="405.0" prefHeight="45.0" prefWidth="377.0" textFill="WHITE">

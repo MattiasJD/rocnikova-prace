@@ -4,6 +4,14 @@ public class Account {
     private int accountBalance = 1000;
     private String currency = "CZK";
 
+    public boolean checkBalance(String num){
+        int num1 = Integer.parseInt(num);
+        if(num1<=getAccountBalance()){
+            return true;
+        }
+        return false;
+    }
+
     public  int getAccountBalance() {
         return accountBalance;
     }

@@ -79,30 +79,39 @@ public class cashOutController implements Initializable {
     }
 
     public void acceptButtonClick(ActionEvent actionEvent) {
-        if(amountField.getLength()>0){
-            acc.setAccountBalance(acc.getAccountBalance()-Integer.parseInt(amountField.getText()));
-            int num = Integer.parseInt(amountField.getText());
-            if(num>0&&num<200){
-                num=100;
-            } else if(num>=200&&num<500){
-                num=200;
-            } else if(num>=500&&num<1000){
-                num=500;
-            } else if(num>=1000&&num<2000){
-                num=1000;
-            } else if(num>=2000&&num<5000){
-                num=2000;
-            } else if(num>=5000){
-                num=5000;
+            if (amountField.getLength() > 0) {
+                if (acc.checkBalance(String.valueOf(amountField.getText())) == true) {
+                    moneyImage.setVisible(true);
+                    acc.setAccountBalance(acc.getAccountBalance() - Integer.parseInt(amountField.getText()));
+                    int num = Integer.parseInt(amountField.getText());
+                    if (num > 0 && num < 200) {
+                        num = 100;
+                    } else if (num >= 200 && num < 500) {
+                        num = 200;
+                    } else if (num >= 500 && num < 1000) {
+                        num = 500;
+                    } else if (num >= 1000 && num < 2000) {
+                        num = 1000;
+                    } else if (num >= 2000 && num < 5000) {
+                        num = 2000;
+                    } else if (num >= 5000) {
+                        num = 5000;
+                    }
+                    setMoneyImage(String.valueOf(num));
+                } else {
+                    infoText2.setText("Na vašem účtu není dostatek prostředků");
+                }
+            } else {
+                String h1 = String.valueOf(choiceBOX.getSelectionModel().getSelectedItem());
+                if(acc.checkBalance(h1)==true) {
+                    moneyImage.setVisible(true);
+                    acc.setAccountBalance(acc.getAccountBalance() - Integer.parseInt(h1));
+                    setMoneyImage(h1);
+                } else {
+                    infoText2.setText("Na vašem účtu není dostatek prostředků");
+                }
             }
-            setMoneyImage(String.valueOf(num));
-        } else{
-            String h1 = String.valueOf(choiceBOX.getSelectionModel().getSelectedItem());
-            acc.setAccountBalance(acc.getAccountBalance()-Integer.parseInt(h1));
-            setMoneyImage(h1);
         }
-        infoText2.setText("Vaše peníze byly vybrány.");
-    }
 
     public void buttonOneClick(ActionEvent actionEvent) {
         amountField.setText(amountField.getText()+String.valueOf(1));
@@ -139,6 +148,6 @@ public class cashOutController implements Initializable {
     }
 
     public void takeMoney(MouseEvent mouseEvent) {
-
+        moneyImage.setVisible(false);
     }
 }
