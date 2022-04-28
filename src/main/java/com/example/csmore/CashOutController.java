@@ -1,7 +1,6 @@
 package com.example.csmore;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +20,7 @@ import java.util.ResourceBundle;
 
 import static com.example.csmore.HelloController.acc;
 
-public class cashOutController implements Initializable {
+public class CashOutController implements Initializable {
     public Label infoText;
     public ChoiceBox choiceBOX;
     public TextField amountField;

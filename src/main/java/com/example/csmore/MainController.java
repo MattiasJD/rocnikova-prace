@@ -77,6 +77,18 @@ public class MainController implements Initializable {
         }
 
     }
+    public void cashIn(ActionEvent actionEvent) {
+        Stage stage = (Stage) infoText.getScene().getWindow();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cashIn-view.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public void SendMoney(ActionEvent actionEvent) {
         Stage stage = (Stage) infoText.getScene().getWindow();

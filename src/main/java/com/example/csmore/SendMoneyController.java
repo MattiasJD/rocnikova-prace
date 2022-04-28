@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import static com.example.csmore.HelloController.acc;
 
-public class sendMoneyController {
+public class SendMoneyController {
     public Label infoText;
     public Label ibanNum;
     public TextField accNumField;
