@@ -5,4 +5,4 @@
 - [ ] zápis zůstatku včetně výpisu všech akcí od uživatele
 - [ ] ukládání informací do souboru a čtení
 
-čau budoucí doktore lukáši
+čau pane inženýre lukáši
