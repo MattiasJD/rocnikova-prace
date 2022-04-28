@@ -58,7 +58,7 @@ public class checkBalanceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        String blnc = String.valueOf(acc.getAccountBalance());
-       String crncy = String.valueOf(acc.getCurrency());
+       String crncy = "CZK";
        accountBalance.setText(blnc+" "+crncy);
     }
 
