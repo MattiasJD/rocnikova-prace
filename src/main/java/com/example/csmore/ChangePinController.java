@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -16,8 +17,8 @@ import static com.example.csmore.HelloController.pass;
 
 public class ChangePinController {
     public Label infoText;
-    public TextField curPINfield;
-    public TextField newPINfield;
+    public PasswordField curPINfield;
+    public PasswordField newPINfield;
     public Label infoText11;
     private int le = 0;
 

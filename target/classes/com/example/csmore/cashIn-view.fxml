@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csmore.CashInController"><children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csmore.CashInController"><children>
     <ImageView fitHeight="900.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@background.png" />
@@ -36,12 +36,12 @@
             <Font name="System Bold" size="22.0" />
         </font>
     </Label>
-      <ImageView fx:id="hundredImg" fitHeight="169.0" fitWidth="118.0" layoutX="12.0" layoutY="731.0" onMouseClicked="#grabHundred" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="twohundredImg" fitHeight="161.0" fitWidth="118.0" layoutX="122.0" layoutY="731.0" onMouseClicked="#grabTwohundred" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="fivehundredImg" fitHeight="161.0" fitWidth="118.0" layoutX="240.0" layoutY="737.0" onMouseClicked="#grabFivehundred" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="thousandImg" fitHeight="161.0" fitWidth="118.0" layoutX="391.0" layoutY="737.0" onMouseClicked="#grabThousand" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="twothousandImg" fitHeight="175.0" fitWidth="118.0" layoutX="567.0" layoutY="724.0" onMouseClicked="#grabTwothousand" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="fivethousandImg" fitHeight="169.0" fitWidth="118.0" layoutX="699.0" layoutY="731.0" onMouseClicked="#grabFivethousand" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hundredImg" fitHeight="190.0" fitWidth="118.0" layoutX="14.0" layoutY="708.0" onMouseClicked="#grabHundred" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="twohundredImg" fitHeight="190.0" fitWidth="118.0" layoutX="122.0" layoutY="708.0" onMouseClicked="#grabTwohundred" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="fivehundredImg" fitHeight="190.0" fitWidth="118.0" layoutX="240.0" layoutY="708.0" onMouseClicked="#grabFivehundred" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="thousandImg" fitHeight="190.0" fitWidth="118.0" layoutX="391.0" layoutY="708.0" onMouseClicked="#grabThousand" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="twothousandImg" fitHeight="190.0" fitWidth="118.0" layoutX="567.0" layoutY="708.0" onMouseClicked="#grabTwothousand" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="fivethousandImg" fitHeight="190.0" fitWidth="118.0" layoutX="698.0" layoutY="708.0" onMouseClicked="#grabFivethousand" pickOnBounds="true" preserveRatio="true" />
 </children>
 
 </AnchorPane>

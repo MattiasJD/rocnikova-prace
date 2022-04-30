@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csmore.ChangePinController">
+<?import javafx.scene.control.PasswordField?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csmore.ChangePinController">
     <children>
         <ImageView fitHeight="900.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -37,15 +38,13 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="infoText11" layoutX="109.0" layoutY="331.0" text="Zopakujte" textFill="WHITE">
+      <Label fx:id="infoText11" layoutX="109.0" layoutY="331.0" prefHeight="77.0" prefWidth="619.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="curPINfield" layoutX="391.0" layoutY="144.0" />
-      <TextField fx:id="newPINfield" layoutX="391.0" layoutY="267.0" />
-      <TextField fx:id="usurePINfield" layoutX="393.0" layoutY="351.0" />
+      <PasswordField fx:id="curPINfield" layoutX="391.0" layoutY="144.0" onMouseClicked="#pinClick" prefHeight="26.0" prefWidth="210.0" />
+      <PasswordField fx:id="newPINfield" layoutX="391.0" layoutY="267.0" onMouseClicked="#neuPinClick" prefHeight="26.0" prefWidth="221.0" />
         <Button layoutX="81.0" layoutY="681.0" mnemonicParsing="false" onAction="#backButton" text="Zpět" />
-
     </children>
 </AnchorPane>
