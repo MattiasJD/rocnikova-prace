@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class CheckBalanceController implements Initializable {
     public Label infoText;
     public Label accountBalance;
+    public Label tranLog;
 
     public void buttonSevenClick(ActionEvent actionEvent) {
     }
@@ -60,6 +61,7 @@ public class CheckBalanceController implements Initializable {
        String blnc = String.valueOf(acc.getAccountBalance());
        String crncy = "CZK";
        accountBalance.setText(blnc+" "+crncy);
+       tranLog.setText(acc.dates.toString().replace("[","").replace("]","").replace(",",""));
     }
 
     public void backButton(ActionEvent actionEvent) {

@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Timer;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -37,11 +38,19 @@ public class HelloController {
     public Button buttonNull;
     public TextField pinField;
     public Label infoText;
-    protected int password = 0000;
     protected int logged;
 
     ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
+    public static Password pass;
+
+    static {
+        try {
+            pass = new Password();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static Account acc = new Account();
 
@@ -80,9 +89,9 @@ public class HelloController {
         pinField.setText(pinField.getText()+"6");
     }
 
-    public void acceptButtonClick(ActionEvent actionEvent) throws IOException {
-        int s = Integer.parseInt(pinField.getText());
-            if (s == password) {
+    public void acceptButtonClick(ActionEvent actionEvent) throws IOException, NoSuchAlgorithmException {
+        String s = pinField.getText();
+            if (pass.checkPass(s)==true) {
                 Parent root = FXMLLoader.load(getClass().getResource("mainview.fxml"));
                 Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);

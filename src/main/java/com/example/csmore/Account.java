@@ -1,10 +1,11 @@
 package com.example.csmore;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Account {
     private int accountBalance;
-
+    protected ArrayList<Dates> dates = new ArrayList();
 
     public boolean checkBalance(String num){
         int num1 = Integer.parseInt(num);

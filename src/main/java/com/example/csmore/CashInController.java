@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 
@@ -94,7 +95,7 @@ public class CashInController implements Initializable {
         notVisible();
     }
     public void notVisible(){
-        infoText2.setText("Na váš účet bylo připásno "+amount+" CZK");
+        infoText2.setText("Na váš účet bylo připsáno "+amount+" CZK");
         hundredImg.setVisible(false);
         twohundredImg.setVisible(false);
         fivehundredImg.setVisible(false);
@@ -105,6 +106,8 @@ public class CashInController implements Initializable {
     }
     public void addMoney(){
         int a = Integer.parseInt(amount);
+        Dates aaa = new Dates(LocalDate.now(),Integer.parseInt(amount),"vklad");
+        acc.dates.add(aaa);
         acc.setAccountBalance(acc.getAccountBalance()+a);
     }
 

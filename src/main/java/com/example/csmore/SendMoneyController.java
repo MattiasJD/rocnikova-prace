@@ -9,6 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
+import java.time.LocalDate;
+
 import static com.example.csmore.HelloController.acc;
 
 public class SendMoneyController {
@@ -22,38 +25,40 @@ public class SendMoneyController {
 
 
     public void buttonSevenClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(7));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(7));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(7));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(7));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(7));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(7));
         }
     }
 
     public void buttonEightClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(8));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(8));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(8));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(8));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(8));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(8));
         }
     }
 
     public void buttonNineClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(9));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(9));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(9));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(9));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(9));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(9));
         }
     }
 
     public void declineButtonClick(ActionEvent actionEvent) {
-        Stage stage = (Stage) infoText.getScene().getWindow();
-        stage.close();
+        if (amountField.getLength()>1){
+            amountField.setText(amountField.getText().substring(0, amountField.getLength()-1));
+        } else if (accNumField.getLength()>1){
+            accNumField.setText(accNumField.getText().substring(0, accNumField.getLength()-1));
+        } else if (ibanField.getLength()>1){
+            ibanField.setText(ibanField.getText().substring(0, ibanField.getLength()-1));
+        } else {
+            Stage stage = (Stage) infoText.getScene().getWindow();
+            stage.close();
+        }
     }
     public void checkBallance(int num){
         int balance = acc.getAccountBalance();
@@ -61,37 +66,33 @@ public class SendMoneyController {
             warningField.setText("Na vašem účtu není dostatek prostředků na provedení.");
         } else{
             acc.setAccountBalance(acc.getAccountBalance()-num);
+            Dates aaa = new Dates(LocalDate.now(),num,"odeslání peněz");
+            acc.dates.add(aaa);
             warningField.setText("Peníze byly úspěšně odeslány.");
         }
     }
 
     public void buttonFourClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(4));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(4));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(4));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(4));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(4));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(4));
         }
     }
 
     public void buttonFiveClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(5));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(5));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(5));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(5));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(5));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(5));
         }
     }
 
     public void buttonSixClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(6));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(6));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(6));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(6));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(6));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(6));
         }
     }
 
@@ -105,42 +106,34 @@ public class SendMoneyController {
     }
 
     public void buttonOneClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(1));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(1));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(1));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(1));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(1));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(1));
         }
     }
 
     public void buttonTwoClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(2));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(2));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(2));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(2));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(2));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(2));
         }
     }
 
     public void buttonThreeClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(3));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(3));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(3));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(3));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(3));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(3));
         }
     }
 
     public void buttonNullClick(ActionEvent actionEvent) {
-        if(abc == 0){
-            accNumField.setText(accNumField.getText()+String.valueOf(0));
-        } else if(abc == 1){
-            ibanField.setText(ibanField.getText()+String.valueOf(0));
-        } else if(abc == 2){
-            amountField.setText(amountField.getText()+String.valueOf(0));
+        switch (abc) {
+            case 0 -> accNumField.setText(accNumField.getText() + String.valueOf(0));
+            case 1 -> ibanField.setText(ibanField.getText() + String.valueOf(0));
+            case 2 -> amountField.setText(amountField.getText() + String.valueOf(0));
         }
     }
 

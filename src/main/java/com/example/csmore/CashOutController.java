@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import static com.example.csmore.HelloController.acc;
@@ -97,6 +98,8 @@ public class CashOutController implements Initializable {
                         num = 5000;
                     }
                     setMoneyImage(String.valueOf(num));
+                    Dates aaa = new Dates(LocalDate.now(),num,"výběr");
+                    acc.dates.add(aaa);
                 } else {
                     infoText2.setText("Na vašem účtu není dostatek prostředků");
                 }
@@ -106,6 +109,8 @@ public class CashOutController implements Initializable {
                     moneyImage.setVisible(true);
                     acc.setAccountBalance(acc.getAccountBalance() - Integer.parseInt(h1));
                     setMoneyImage(h1);
+                    Dates aaa = new Dates(LocalDate.now(),Integer.parseInt(h1),"výběr");
+                    acc.dates.add(aaa);
                 } else {
                     infoText2.setText("Na vašem účtu není dostatek prostředků");
                 }
