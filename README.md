@@ -1,12 +1,10 @@
-﻿# rocnikova-neprace
+﻿# rocnikova-prace
 ## Dodělat:
 - [x] vklad peněz
 - [x] posílání na telefon
 - [x] zápis zůstatku včetně výpisu všech akcí od uživatele
 - [x] ukládání informací do souboru a čtení
 ---
-- [ ] dokumentace - dodělat
-- [ ] prezentace
+- [x] dokumentace - dodělat
+- [x] prezentace
 
-
-čau pane inženýre lukáši
